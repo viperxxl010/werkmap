@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tandartspraktijk Blaricum</title>
+<meta name="description" content="Nieuwe, persoonlijke tandartspraktijk in Blaricum. Algemene tandheelkunde, orthodontie, Invisalign en esthetische zorg. Nieuwe patiënten welkom.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /*
+  =====================================================================
+  AFBEELDINGEN — er moeten drie foto-URL's worden ingevuld.
+  Zoek op "FOTO-URL" om naar de plekken te springen. Zie handleiding.
+  =====================================================================
+  */
+
+  :root {
+    --green: #4A6B5D;
+    --green-dark: #2E4A3E;
+    --green-soft: #7A9388;
+    --cream: #F5F1EB;
+    --cream-warm: #EFE9DF;
+    --white: #FFFFFF;
+    --ink: #2A2A2A;
+    --muted: #6B6B6B;
+    --line: #E0DAD0;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --body: 'Lora', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, padding 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav.scrolled {
+    border-bottom-color: var(--line);
+    padding: 14px 48px;
+  }
+
+  .nav-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--green-dark);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  .nav-links a:hover { color: var(--green); }
+
+  .nav-links a:not(.nav-cta)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--green);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--green);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    background: var(--green-dark);
+    color: var(--white) !important;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--ink);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 92vh;
+    /* FOTO-URL-1: Hero achtergrondfoto. Vervang de URL hieronder. */
+    background:
+      linear-gradient(135deg, rgba(46, 74, 62, 0.72) 0%, rgba(46, 74, 62, 0.55) 100%),
+      url('VERVANG_DIT_MET_URL_VAN_HERO_FOTO.jpg') center/cover;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+    animation: fadeUp 1s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0.85;
+    font-family: var(--body);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 44px;
+    max-width: 560px;
+    opacity: 0.95;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: var(--body);
+    font-weight: 500;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--white);
+    color: var(--green-dark);
+  }
+
+  .btn-primary:hover {
+    background: var(--cream);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ============ DUO SECTIE ============ */
+  .duo-section {
+    padding: 0;
+    background: var(--white);
+  }
+
+  .duo-wrap {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .duo-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    /* FOTO-URL-2: Foto van Sjomara met patiënt in de praktijk. Vervang de URL hieronder. */
+    background: url('VERVANG_DIT_MET_URL_VAN_PRAKTIJK_FOTO.jpg') center/cover;
+    border-radius: 2px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 30px 80px rgba(46, 74, 62, 0.15);
+  }
+
+  .duo-caption {
+    max-width: 680px;
+    margin: 40px auto 0;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .duo-caption p {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--green-dark);
+    line-height: 1.5;
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 110px 48px;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .container-narrow {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    color: var(--green-dark);
+    margin-bottom: 32px;
+  }
+
+  h2 em { font-style: italic; font-weight: 400; }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--green-dark);
+    margin-bottom: 14px;
+  }
+
+  p { margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ============ WELKOM ============ */
+  #welkom {
+    background: var(--cream);
+    text-align: center;
+  }
+
+  #welkom .container-narrow > p {
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .quote {
+    margin-top: 52px;
+    padding: 36px 32px;
+    border-left: 2px solid var(--green);
+    text-align: left;
+    font-family: var(--serif);
+    font-size: 23px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--green-dark);
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ============ OVER ============ */
+  #over {
+    background: var(--white);
+    padding-top: 80px;
+  }
+
+  .over-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .over-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--cream) 100%);
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .over-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* FOTO-URL-3: Portretfoto van Sjomara. Vervang de URL hieronder. */
+    background: url('VERVANG_DIT_MET_URL_VAN_PORTRET_FOTO.jpg') center/cover;
+  }
+
+  .over-image-frame {
+    position: absolute;
+    inset: 16px;
+    border: 1px solid rgba(255,255,255,0.4);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .over-text h2 { margin-bottom: 24px; }
+
+  .principles {
+    margin-top: 36px;
+    list-style: none;
+  }
+
+  .principles li {
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .principles li:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .principles li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+
+  .credentials {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============ BEHANDELINGEN ============ */
+  #behandelingen {
+    background: var(--cream);
+  }
+
+  .section-head {
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 72px;
+  }
+
+  .treatments {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .treatment {
+    background: var(--white);
+    padding: 48px 40px;
+    transition: background 0.3s ease;
+  }
+
+  .treatment:hover { background: var(--cream-warm); }
+
+  .treatment-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 24px;
+    color: var(--green);
+  }
+
+  .treatment h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .treatment p {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+
+  /* ============ TEAM ============ */
+  #team {
+    background: var(--white);
+    text-align: center;
+  }
+
+  .team-solo {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .team-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: 0 auto 32px;
+    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--cream) 100%);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .team-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Hergebruikt FOTO-URL-3: dezelfde portretfoto als in de Over-sectie. */
+    background: url('VERVANG_DIT_MET_URL_VAN_PORTRET_FOTO.jpg') center top/cover;
+  }
+
+  .team-name {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--green-dark);
+    margin-bottom: 6px;
+  }
+
+  .team-role {
+    font-size: 14px;
+    color: var(--green);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .team-bio {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ============ PRAKTISCH ============ */
+  #praktisch {
+    background: var(--cream);
+  }
+
+  .practical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .info-block { margin-bottom: 36px; }
+  .info-block:last-child { margin-bottom: 0; }
+
+  .info-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .info-content {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .info-content a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 0.2s ease;
+  }
+
+  .info-content a:hover { border-bottom-color: var(--green); }
+
+  .hours {
+    list-style: none;
+    font-size: 16px;
+  }
+
+  .hours li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hours li:last-child { border-bottom: none; }
+
+  .hours .day { color: var(--ink); }
+  .hours .time { color: var(--muted); }
+
+  .map-placeholder {
+    aspect-ratio: 4 / 5;
+    background: var(--green-dark);
+    background-image:
+      linear-gradient(135deg, rgba(74, 107, 93, 0.85), rgba(46, 74, 62, 0.95)),
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--cream);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    top: 45%;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -20px;
+  }
+
+  .map-placeholder::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--green-dark);
+    border-radius: 50%;
+    top: 45%;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -16px;
+  }
+
+  .map-label {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  /* ============ CONTACT ============ */
+  #contact {
+    background: var(--green-dark);
+    color: var(--white);
+    text-align: center;
+  }
+
+  #contact .section-eyebrow { color: var(--cream); }
+  #contact h2 { color: var(--white); }
+
+  #contact .lead {
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0 auto 56px;
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    padding: 40px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+  }
+
+  .contact-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .contact-card-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 20px;
+    color: var(--cream);
+  }
+
+  .contact-card-label {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+
+  .contact-card-value {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 72px 48px 36px;
+  }
+
+  .footer-grid {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  footer h4 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  footer p, footer li {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+
+  footer a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  footer a:hover { color: var(--white); }
+
+  .footer-links { list-style: none; }
+
+  .footer-bottom {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      padding: 24px;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: block; }
+
+    .hero { padding: 100px 24px 60px; }
+    section { padding: 80px 24px; }
+
+    .over-grid,
+    .practical-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .treatments {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-methods {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+    }
+
+    .map-placeholder {
+      aspect-ratio: 16 / 10;
+    }
+
+    .duo-wrap { padding: 0 24px; }
+    .duo-image { margin-top: -40px; aspect-ratio: 4 / 3; }
+    .duo-caption p { font-size: 18px; }
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#" class="nav-brand">Tandartspraktijk Blaricum</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#welkom">Welkom</a></li>
+    <li><a href="#over">Over</a></li>
+    <li><a href="#behandelingen">Behandelingen</a></li>
+    <li><a href="#team">Tandarts</a></li>
+    <li><a href="#praktisch">Praktisch</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Nieuw in Blaricum</div>
+    <h1>Tandartspraktijk <em>Blaricum</em></h1>
+    <p class="hero-sub">Een kleine praktijk in het hart van het dorp. Tandarts Sjomara Schulmaijer Bosker neemt de tijd voor wat u nodig heeft.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Inschrijven als patiënt</a>
+      <a href="#contact" class="btn btn-secondary">Neem contact op</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WELKOM ============ -->
+<section id="welkom">
+  <div class="container-narrow reveal">
+    <div class="section-eyebrow">Welkom</div>
+    <h2>Goede mondzorg begint met een goed gesprek</h2>
+    <p>Sjomara werkte jarenlang in grotere praktijken in 't Gooi. Nu heeft ze een eigen plek waar ze haar tijd en aandacht aan u kan geven.</p>
+    <p>U wordt geen nummer. U komt binnen, wordt herkend, en weet wie er aan uw gebit werkt.</p>
+    <div class="quote">
+      Voldoende tijd voor uw vraag. Eerlijk advies. Een behandelplan dat u zelf begrijpt.
+    </div>
+  </div>
+</section>
+
+<!-- ============ DUO FOTO ============ -->
+<section class="duo-section">
+  <div class="duo-wrap reveal">
+    <div class="duo-image" role="img" aria-label="Sjomara en een patiënt bekijken samen de 3D-scan van het gebit"></div>
+    <div class="duo-caption">
+      <p>Samen kijken naar uw gebit. Uitleg op een scherm waar u meekijkt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVER ============ -->
+<section id="over">
+  <div class="container">
+    <div class="over-grid reveal">
+      <div class="over-image">
+        <div class="over-image-frame"></div>
+      </div>
+      <div class="over-text">
+        <div class="section-eyebrow">De tandarts</div>
+        <h2>Sjomara Schulmaijer <em>Bosker</em></h2>
+        <p>Sjomara is tandarts met aanvullende interesse in orthodontie, esthetische tandheelkunde en Invisalign. Ze studeerde af aan [opleidingsinstituut] en werkt sindsdien in praktijken in 't Gooi.</p>
+        <p>Wat haar drijft is wat veel patiënten missen bij grotere praktijken: ruimte om uw verhaal te horen voordat ze naar uw gebit kijkt.</p>
+        <ul class="principles">
+          <li>Tijd nemen voor elke patiënt</li>
+          <li>Eerlijk advies, ook als een behandeling niet nodig is</li>
+          <li>Rustige sfeer, ook voor wie liever niet bij de tandarts komt</li>
+          <li>Moderne techniek, met persoonlijke aandacht</li>
+        </ul>
+        <p class="credentials">BIG-nummer: [in te vullen]   ·   KvK: [in te vullen]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEHANDELINGEN ============ -->
+<section id="behandelingen">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Wat we doen</div>
+      <h2>Behandelingen</h2>
+      <p>Reguliere zorg en specialistische behandelingen onder één dak. U hoeft niet door te verwijzen voor de meeste vragen.</p>
+    </div>
+    <div class="treatments reveal">
+      <div class="treatment">
+        <svg class="treatment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2C8 2 6 4 6 8c0 3 1 5 2 9 .5 2 1 5 4 5s3.5-3 4-5c1-4 2-6 2-9 0-4-2-6-6-6z"/>
+        </svg>
+        <h3>Algemene tandheelkunde</h3>
+        <p>Halfjaarlijkse controles, vullingen, gebitsreiniging en advies over uw mondverzorging.</p>
+      </div>
+      <div class="treatment">
+        <svg class="treatment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 8h16M4 12h16M4 16h16"/>
+          <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+          <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+        </svg>
+        <h3>Orthodontie</h3>
+        <p>Rechte tanden op elke leeftijd. Sjomara adviseert wat past bij uw situatie, van vaste beugel tot doorzichtige aligners.</p>
+      </div>
+      <div class="treatment">
+        <svg class="treatment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 3l2.5 5 5.5 1-4 4 1 5.5L12 16l-5 2.5 1-5.5-4-4 5.5-1z"/>
+        </svg>
+        <h3>Invisalign</h3>
+        <p>Doorzichtige aligners om uw gebit recht te zetten zonder zichtbare beugel. U kunt ze zelf in- en uitnemen.</p>
+      </div>
+      <div class="treatment">
+        <svg class="treatment-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12c0-4 3-7 7-7s7 3 7 7"/>
+          <path d="M5 12c0 4 3 7 7 7s7-3 7-7"/>
+          <path d="M9 11v2M15 11v2"/>
+        </svg>
+        <h3>Esthetische tandheelkunde</h3>
+        <p>Facings, bleken en cosmetische correcties. Met behoud van uw eigen, natuurlijke uitstraling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section id="team">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Wie u ontmoet</div>
+      <h2>De tandarts</h2>
+    </div>
+    <div class="team-solo reveal">
+      <div class="team-photo"></div>
+      <div class="team-name">Sjomara Schulmaijer Bosker</div>
+      <div class="team-role">Tandarts</div>
+      <p class="team-bio">Specialisatie in orthodontie, esthetische tandheelkunde en Invisalign. Oprichter van Tandartspraktijk Blaricum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRAKTISCH ============ -->
+<section id="praktisch">
+  <div class="container">
+    <div class="practical-grid reveal">
+      <div>
+        <div class="section-eyebrow">Praktische informatie</div>
+        <h2>Bezoek ons</h2>
+
+        <div class="info-block">
+          <div class="info-label">Adres</div>
+          <div class="info-content">
+            [Straatnaam huisnummer]<br>
+            [Postcode] Blaricum
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Contact</div>
+          <div class="info-content">
+            <a href="tel:[TELEFOONNUMMER-ZONDER-SPATIES]">[Telefoonnummer]</a><br>
+            <a href="mailto:[E-MAILADRES]">[E-mailadres]</a>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Openingstijden</div>
+          <ul class="hours">
+            <li><span class="day">Maandag</span><span class="time">08.30 — 17.00</span></li>
+            <li><span class="day">Dinsdag</span><span class="time">08.30 — 17.00</span></li>
+            <li><span class="day">Woensdag</span><span class="time">08.30 — 17.00</span></li>
+            <li><span class="day">Donderdag</span><span class="time">08.30 — 17.00</span></li>
+            <li><span class="day">Vrijdag</span><span class="time">08.30 — 17.00</span></li>
+            <li><span class="day">Zaterdag &amp; zondag</span><span class="time">Gesloten</span></li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Spoed buiten openingstijden</div>
+          <div class="info-content">
+            Bel onze praktijk. U hoort dan automatisch het nummer van de dienstdoende spoedtandarts.
+          </div>
+        </div>
+      </div>
+
+      <div class="map-placeholder">
+        <div class="map-label">Kaart komt hier — adres in te vullen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container reveal">
+    <div class="section-eyebrow">Aanmelden of vragen</div>
+    <h2>Neem <em>contact</em> op</h2>
+    <p class="lead">Wilt u zich inschrijven, of heeft u een vraag? Bel, mail of stuur een WhatsApp-bericht. We reageren binnen twee werkdagen.</p>
+
+    <div class="contact-methods">
+      <a href="tel:[TELEFOONNUMMER-ZONDER-SPATIES]" class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <div class="contact-card-label">Bellen</div>
+        <div class="contact-card-value">[Telefoonnummer]</div>
+      </a>
+
+      <a href="mailto:[E-MAILADRES]" class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <div class="contact-card-label">Mailen</div>
+        <div class="contact-card-value">[E-mailadres]</div>
+      </a>
+
+      <a href="https://wa.me/[MOBIELNUMMER-ZONDER-PLUS-EN-SPATIES]" class="contact-card">
+        <svg class="contact-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <div class="contact-card-label">WhatsApp</div>
+        <div class="contact-card-value">Stuur een bericht</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Tandartspraktijk Blaricum</h4>
+      <p style="color: rgba(255,255,255,0.7); max-width: 320px;">Een kleine, persoonlijke tandartspraktijk in het hart van Blaricum.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>[Straatnaam huisnummer]</p>
+      <p>[Postcode] Blaricum</p>
+      <p style="margin-top: 12px;"><a href="tel:[TELEFOONNUMMER-ZONDER-SPATIES]">[Telefoonnummer]</a></p>
+      <p><a href="mailto:[E-MAILADRES]">[E-mailadres]</a></p>
+    </div>
+    <div>
+      <h4>Informatie</h4>
+      <ul class="footer-links">
+        <li style="color: rgba(255,255,255,0.6);">BIG: [in te vullen]</li>
+        <li style="color: rgba(255,255,255,0.6);">KvK: [in te vullen]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Tandartspraktijk Blaricum</div>
+    <div>Tandarts in Blaricum, Laren, Huizen en Eemnes</div>
+  </div>
+</footer>
+
+<script>
+  // Nav achtergrond bij scrollen
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // Mobiel menu open/dicht
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Secties rustig tevoorschijn laten komen bij scrollen
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
